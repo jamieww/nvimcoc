@@ -40,14 +40,16 @@ Plug 'ctrlpvim/ctrlp.vim'                 " Fuzzy file, buffer, mru, tag, etc fi
 " Plug 'icymind/NeoSolarized'
 " Plug 'ErichDonGubler/vim-sublime-monokai'
 " Plug 'chriskempson/base16-vim'
-
 " Plug 'KabbAmine/yowish.vim'
 " Plug 'tomasr/molokai'
 " Plug 'morhetz/gruvbox'
 Plug 'nanotech/jellybeans.vim'
+
+" Install nightly build, replace ./install.sh with install.cmd on windows
+Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
+" Plug 'Valloric/YouCompleteMe'
 Plug 'yegappan/mru'
 Plug 'jistr/vim-nerdtree-tabs'
-" Plug 'Valloric/YouCompleteMe'
 Plug 'w0rp/ale'
 Plug 'ervandew/supertab'
 if has('nvim')
@@ -55,11 +57,10 @@ if has('nvim')
 else
     Plug 'powerline/powerline'
 endif
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine'
 Plug 'jiangmiao/auto-pairs'
 Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'tell-k/vim-autopep8'
 Plug 'gabrielelana/vim-markdown'
 Plug 'joker1007/vim-markdown-quote-syntax'

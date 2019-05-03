@@ -97,6 +97,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias nv="nvim"
+
 export CLICOLOR=1
 export LSCOLORS='ExGxFxdaCxDaDahbadacec'    # 指定颜色
 
@@ -104,18 +106,21 @@ export LSCOLORS='ExGxFxdaCxDaDahbadacec'    # 指定颜色
 
 # For compilers to find zlib you may need to set:
 export LDFLAGS="${LDFLAGS} -L/usr/local/opt/zlib/lib"
+export LDFLAGS="${LDFLAGS} -L/usr/local/opt/gettext/lib"
 export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/zlib/include"
-
+export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/gettext/include"
 # For pkg-config to find zlib you may need to set:
 export PKG_CONFIG_PATH="${PKG_CONFIG_PATH} /usr/local/opt/zlib/lib/pkgconfig"
 
-#For compilers to find gettext you may need to set:
-export LDFLAGS="${LDFLAGS} -L/usr/local/opt/gettext/lib"
-export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/gettext/include"
-
 export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:/usr/local/opt/gettext/bin:$PATH"
+export PATH="/usr/local/Cellar/vim/8.1.1200/bin:$PYENV_ROOT/bin:/usr/local/opt/gettext/bin:$PATH"
 eval "$(pyenv init -)"
 
+#GOROOT
+export GOROOT="/usr/local/go"
+#GOPATH
+export GOPATH="$HOME/src/gopath"
+
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+# export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$GOROOT/bin:$GOPATH/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
