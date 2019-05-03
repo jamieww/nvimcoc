@@ -19,6 +19,21 @@ nvim  +"CocInstall coc-vetur coc-snippets coc-stylelint coc-css coc-prettier coc
 nvim +GoInstallBinaries main.go
 ```
 
+
+## install powerline
+
+use vim8 or macvim, neovim暂不支持powerline
+
+```bash
+if has('nvim')
+    set rtp+=~/.pyenv/versions/3.7.3/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
+else
+    set rtp+=~/.config/nvim/plugged/powerline/powerline/bindings/vim
+endif
+```
+安装powerline字体
+同时设置终端的偏好设置的字体为Inconsolata-g for Powerline 14，vim显示的powerline的字体效果才能正常
+
 ## install node
 
 use homebrew
