@@ -31,7 +31,20 @@ else
     set rtp+=~/.config/nvim/plugged/powerline/powerline/bindings/vim
 endif
 ```
+
 安装powerline字体
+
+```bash
+# clone
+git clone https://github.com/powerline/fonts.git --depth=1
+# install
+cd fonts
+./install.sh
+# clean-up a bit
+cd ..
+rm -rf fonts
+```
+
 同时设置终端的偏好设置的字体为Inconsolata-g for Powerline 14，vim显示的powerline的字体效果才能正常
 
 ## install node
