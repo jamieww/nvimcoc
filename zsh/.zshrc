@@ -34,7 +34,7 @@ function setProxy() {
 }
 
 function unProxy() {
-    unset ALL_PROXY
+    # unset ALL_PROXY
     unset HTTP_PROXY
     unset HTTPS_PROXY
 }
