@@ -52,7 +52,7 @@ rm -rf fonts
 use homebrew
 
 ```bash
-brew install node
+brew install node@10
 ```
 
 or install use nvm
