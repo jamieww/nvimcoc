@@ -27,18 +27,18 @@ ZSH_THEME="apple"
 # alias unhttps='unset https_proxy'  
 
 function proxy() {
-    # export {HTTP,HTTPS,FTP}_PROXY="http://127.0.0.1:2000"
-    # export ALL_PROXY=socks5://127.0.0.1:1080
+    # export {http,https,ftp}_proxy="http://127.0.0.1:2000"
+    # export all_proxy=socks5://127.0.0.1:1080
     echo "setting http(s)_proxy"
-    export HTTP_PROXY=http://127.0.0.1:2000
-    export HTTPS_PROXY=$HTTP_PROXY
+    export http_proxy=http://127.0.0.1:2000
+    export https_proxy=$http_proxy
 }
 
 function unproxy() {
-    # unset {HTTP,HTTPS,FTP}_PROXY
-    # unset ALL_PROXY
-    unset HTTP_PROXY
-    unset HTTPS_PROXY
+    # unset {http,https,ftp}_proxy
+    # unset all_proxy
+    unset http_proxy
+    unset https_proxy
     echo "removed http(s)_proxy"
 }
 
