@@ -19,21 +19,22 @@ ZSH_THEME="apple"
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # proxy list
-alias proxy='export all_proxy=socks5://127.0.0.1:1081'
-alias httproxy='export http_proxy=http://127.0.0.1:8001'
-alias httpsproxy='export https_proxy=http://127.0.0.1:8001'
+alias proxy='export all_proxy=socks5://127.0.0.1:1080'
+alias httproxy='export http_proxy=http://127.0.0.1:2000'
+alias httpsproxy='export https_proxy=http://127.0.0.1:2000'
 alias unproxy='unset all_proxy'  
 alias unhttp='unset http_proxy'  
 alias unhttps='unset https_proxy'  
 
 function setProxy() {
-    # export {HTTP,HTTPS,FTP}_PROXY="http://127.0.0.1:8001"
-    export ALL_PROXY=socks5://127.0.0.1:1081
-    export HTTP_PROXY=http://127.0.0.1:8001
-    export HTTPS_PROXY=http://127.0.0.1:8001
+    # export {HTTP,HTTPS,FTP}_PROXY="http://127.0.0.1:2000"
+    export ALL_PROXY=socks5://127.0.0.1:1080
+    export HTTP_PROXY=http://127.0.0.1:2000
+    export HTTPS_PROXY=http://127.0.0.1:2000
 }
 
 function unProxy() {
+    # unset {HTTP,HTTPS,FTP}_PROXY
     unset ALL_PROXY
     unset HTTP_PROXY
     unset HTTPS_PROXY
