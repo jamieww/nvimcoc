@@ -6,9 +6,9 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 
 " python {{{
-" let g:python_host_prog="/Users/jamieww/.pyenv/versions/anaconda2-4.0.0/bin/python"
+let g:python_host_prog="/Users/jamieww/.pyenv/versions/anaconda2-4.0.0/bin/python"
 " let g:python_host_prog="/Users/jamieww/.pyenv/versions/3.7.3/bin/python"
-" let g:python3_host_prog="/Users/jamieww/.pyenv/versions/3.7.3/bin/python3"
+let g:python3_host_prog="/Users/jamieww/.pyenv/versions/3.7.3/bin/python3"
 " let g:powerline_pycmd="py3"
 " }}}
 
@@ -35,7 +35,7 @@ call plug#begin('~/.config/nvim/plugged')
 " Make sure you use single quotes
 Plug 'scrooloose/nerdtree'                " file/directory treee
 Plug 'scrooloose/nerdcommenter'           " code commenter
-Plug 'ctrlpvim/ctrlp.vim'                 " Fuzzy file, buffer, mru, tag, etc finder
+" Plug 'ctrlpvim/ctrlp.vim'                 " Fuzzy file, buffer, mru, tag, etc finder
 " Plug 'altercation/vim-colors-solarized'   " solarized themePlug 'jnurmine/Zenburn'
 " Plug 'icymind/NeoSolarized'
 " Plug 'ErichDonGubler/vim-sublime-monokai'
@@ -48,10 +48,11 @@ Plug 'nanotech/jellybeans.vim'
 " Install nightly build, replace ./install.sh with install.cmd on windows
 Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
 " Plug 'Valloric/YouCompleteMe'
+Plug 'honza/vim-snippets'
 Plug 'yegappan/mru'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'w0rp/ale'
-Plug 'ervandew/supertab'
+" Plug 'ervandew/supertab'
 if has('nvim')
     Plug 'itchyny/lightline.vim'
 else
@@ -60,8 +61,8 @@ endif
 Plug 'Yggdroot/indentLine'
 Plug 'jiangmiao/auto-pairs'
 Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'tell-k/vim-autopep8'
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Plug 'tell-k/vim-autopep8'
 Plug 'gabrielelana/vim-markdown'
 Plug 'joker1007/vim-markdown-quote-syntax'
 " Plug 'iamcco/mathjax-support-for-mkdp'
@@ -76,6 +77,7 @@ Plug 'tpope/vim-fugitive'
 " Pass the path to set the runtimepath properly.
 " Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Initialize plugin system
+Plug 'rbgrouleff/bclose.vim'
 call plug#end()
 filetype plugin indent on    " required
 "}}}
@@ -85,8 +87,8 @@ filetype plugin indent on    " required
 set nu
 syntax enable
 syntax on
-let mapleader=','
-let g:mapleader=','
+let mapleader=' '
+let g:mapleader=' '
 
 set autochdir
 set cursorline
@@ -169,7 +171,9 @@ nmap <leader>ss :source ~/.config/nvim/session.vim<cr>
 nmap <leader>e :e ~/.config/nvim/init.vim<cr>
 "set shortcut for copy to clipboard of system 
 " nmap <leader>y "+y
-nmap <leader>v "+gp
+" nmap <leader>v "+gp
+inoremap jj <ESC> 
+nnoremap <leader>es :CocCommand snippets.editSnippets<CR>
 
 map <leader>tn :tabnew<cr>
 map <leader>tc :tabclose<cr>
@@ -213,6 +217,70 @@ map c<space>    <plug>NERDCommenterToggle<CR>
 
 " map tt          <plug>NERDTreeTabsToggle<CR>
 " map ff          <plug>NERDTreeTabsFind<CR>
+
+" split naviagation 
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+" Use <C-l> for trigger snippet expand.
+imap <C-l> <Plug>(coc-snippets-expand)
+
+" Use <C-j> for select text for visual placeholder of snippet.
+vmap <C-j> <Plug>(coc-snippets-select)
+
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<c-j>'
+
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<c-k>'
+
+" Use <C-j> for both expand and jump (make expand higher priority.)
+imap <C-j> <Plug>(coc-snippets-expand-jump)
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? coc#rpc#request('doKeymap', ['snippets-expand-jump','']) :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_snippet_next = '<tab>'
+
+" Use <c-space> for trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Use <cr> for confirm completion, `<C-g>u` means break undo chain at current position.
+" Coc only does snippet and additional edit on confirm.
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" Use `[c` and `]c` for navigate diagnostics
+nmap <silent> [c <Plug>(coc-diagnostic-prev)
+nmap <silent> ]c <Plug>(coc-diagnostic-next)
+
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K for show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if &filetype == 'vim'
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
 "}}}
 
 " let g:airline#extensions#tabline#enabled = 1
@@ -321,4 +389,14 @@ func! CompileRunGcc()
     endif
 endfunc
 "}}}
+
+" bclose plugin {{{
+" added by bantana
+nnoremap <leader>q :Bclose<CR>
+nmap <leader>rn <Plug>(coc-rename)
+" }}}
+
+" json hidden {{{
+set conceallevel=0
+" }}}
 
