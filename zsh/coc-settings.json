@@ -1,0 +1,76 @@
+{
+  "javascript.suggestionActions.enabled": false,
+  "coc.preferences.colorSupport": false,
+
+  "prettier.semi": true,
+  "prettier.singleQuote": true,
+  "prettier.bracketSpacing": true,
+  "prettier.jsxBracketSameLine": false,
+  "prettier.arrowParens": "always",
+
+  "java.format.enabled": true,
+
+  "snippets.ultisnips.directories": ["/Users/jamieww/.config/coc/ultisnips"],
+
+  "languageserver": {
+    "dart": {
+      "command": "dart_language_server",
+      "args": [],
+      "filetypes": ["dart"],
+      "initializationOptions": {},
+      "settings": {
+        "dart": {
+          "validation": {},
+          "completion": {}
+        }
+      }
+    },
+    // brew tap twlz0ne/homebrew-ccls && brew install ccls
+    "ccls": {
+      "command": "ccls",
+      "filetypes": ["c", "cpp", "objc", "objcpp"],
+      "rootPatterns": [
+        ".ccls",
+        "compile_commands.json",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ],
+      "initializationOptions": {
+        "cacheDirectory": "/tmp/ccls"
+      }
+    },
+    // yarn global add dockerfile-language-server-nodejs
+    "dockerfile": {
+      "command": "docker-langserver",
+      "filetypes": ["dockerfile"],
+      "args": ["--stdio"]
+    },
+    // go get -u -v github.com/sourcegraph/go-langserver
+    "golang": {
+      "command": "go-langserver",
+      "filetypes": ["go"],
+      "initializationOptions": {
+        "gocodeCompletionEnabled": true,
+        "diagnosticsEnabled": true,
+        "lintTool": "golint"
+      }
+    },
+    // yarn global add bash-language-server
+    "bash": {
+      "command": "bash-language-server",
+      "args": ["start"],
+      "filetypes": ["sh"],
+      "ignoredRootPaths": ["~"]
+    }
+    // go get -u -v github.com/mattn/efm-langserver/cmd/efm-langserver
+    // "efm": {
+    //  "command": "efm-langserver",
+    //  "args": [],
+    //  // custom config path
+    //  /* "args": ["-c", "$HOME/.config/efm-langserver/config.yaml"], */
+    //  "filetypes": ["vim", "eruby", "markdown"]
+    // }
+  },
+  "java.errors.incompleteClasspath.severity": "ignore"
+}
