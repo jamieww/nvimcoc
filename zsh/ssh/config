@@ -1,0 +1,11 @@
+Host vnserver
+        User root
+        Port 22
+        Hostname 47.101.164.44
+        IdentityFile ~/.ssh/id_rsa
+
+Host bwhserver
+        User root
+        Port 26759
+        Hostname 23.83.226.242
+        IdentityFile ~/.ssh/id_rsa
