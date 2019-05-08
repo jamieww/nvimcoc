@@ -39,11 +39,11 @@ Plug 'scrooloose/nerdcommenter'           " code commenter
 " Plug 'altercation/vim-colors-solarized'   " solarized themePlug 'jnurmine/Zenburn'
 " Plug 'icymind/NeoSolarized'
 " Plug 'ErichDonGubler/vim-sublime-monokai'
-" Plug 'chriskempson/base16-vim'
 " Plug 'KabbAmine/yowish.vim'
 " Plug 'tomasr/molokai'
 " Plug 'morhetz/gruvbox'
 Plug 'nanotech/jellybeans.vim'
+Plug 'mileszs/ack.vim'
 
 " Install nightly build, replace ./install.sh with install.cmd on windows
 Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
@@ -62,7 +62,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'jiangmiao/auto-pairs'
 Plug 'fatih/vim-go', { 'for': 'go' }
 " Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-" Plug 'tell-k/vim-autopep8'
+Plug 'tell-k/vim-autopep8'
 Plug 'gabrielelana/vim-markdown'
 Plug 'joker1007/vim-markdown-quote-syntax'
 " Plug 'iamcco/mathjax-support-for-mkdp'
@@ -397,6 +397,7 @@ endfunc
 " added by bantana
 nnoremap <leader>q :Bclose<CR>
 nmap <leader>rn <Plug>(coc-rename)
+nnoremap <leader>/ :Ack!<Space>
 " }}}
 
 " json hidden {{{
