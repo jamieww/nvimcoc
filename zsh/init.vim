@@ -5,6 +5,19 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall
 endif
 
+" function {{{
+function! EnsureDirExits (dir)
+  if !isdirectory(a:dir)
+    if exists("*mkdir")
+      call mkdir(a:dir, 'p')
+      echo "Created directory: " . a:dir
+    else
+      echo "please create directory: " . a:dir
+    endif
+  endif
+endfunction
+" }}}
+
 " python {{{
 let g:python_host_prog="/Users/jamieww/.pyenv/versions/anaconda2-4.0.0/bin/python"
 " let g:python_host_prog="/Users/jamieww/.pyenv/versions/3.7.3/bin/python"
@@ -43,11 +56,12 @@ Plug 'scrooloose/nerdcommenter'           " code commenter
 " Plug 'tomasr/molokai'
 " Plug 'morhetz/gruvbox'
 Plug 'nanotech/jellybeans.vim'
-Plug 'mileszs/ack.vim'
 
 " Install nightly build, replace ./install.sh with install.cmd on windows
 Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
 " Plug 'Valloric/YouCompleteMe'
+Plug 'mileszs/ack.vim'
+Plug 'simnalamburt/vim-mundo'
 Plug 'honza/vim-snippets'
 Plug 'yegappan/mru'
 Plug 'jistr/vim-nerdtree-tabs'
@@ -82,6 +96,19 @@ call plug#end()
 filetype plugin indent on    " required
 "}}}
 
+" vim-mundo {{{
+set undofile
+" check 'vim-mundo directory'
+call EnsureDirExits($HOME . '/.vim/tmp/undo')
+set undodir=~/.vim/tmp/undo
+" nnoremap <leader>u :MundoToggle<cr>
+nnoremap <F5> :MundoToggle<cr>
+let g:mundo_debug = 1
+let g:mundo_preview_bottom = 1
+let g:mundo_tree_statusline = "mundo"
+let g:mundo_preview_statusline = "mundo preview"
+" }}}
+ 
 "  Basic Settings{{{
 "
 set nu
