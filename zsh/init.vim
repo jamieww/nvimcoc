@@ -101,7 +101,7 @@ set undofile
 " check 'vim-mundo directory'
 call EnsureDirExits($HOME . '/.vim/tmp/undo')
 set undodir=~/.vim/tmp/undo
-" nnoremap <leader>u :MundoToggle<cr>
+nnoremap <leader>u :MundoToggle<cr>
 nnoremap <F5> :MundoToggle<cr>
 let g:mundo_debug = 1
 let g:mundo_preview_bottom = 1
