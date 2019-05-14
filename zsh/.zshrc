@@ -111,6 +111,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias nv="nvim"
+alias scpr="rsync -P --rsh=ssh"
 
 export CLICOLOR=1
 export LSCOLORS='ExGxFxdaCxDaDahbadacec'    # 指定颜色
