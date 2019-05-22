@@ -97,6 +97,21 @@ vi ~/.config/nvim/coc-settings.json
 }
 ```
 
+### python
+
+install python-language-server
+
+```bash
+pip install python-language-server
+```
+
+vi ~/.config/nvim/coc-settings.json
+
+```json
+
+```
+
+
 ### bash
 
 ```bash
