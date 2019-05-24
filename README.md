@@ -14,7 +14,7 @@ pip3 install neovim
 
 git clone https://github.com/bantana/nvimcoc
 
-nvim  +"CocInstall coc-python coc-vetur coc-snippets coc-stylelint coc-css coc-prettier coc-yaml coc-tslint coc-html coc-tsserver coc-eslint coc-emmet coc-json"
+nvim  +"CocInstall coc-python coc-pyls coc-vetur coc-snippets coc-stylelint coc-css coc-prettier coc-yaml coc-tslint coc-html coc-tsserver coc-eslint coc-emmet coc-json"
 
 nvim +GoInstallBinaries main.go
 
