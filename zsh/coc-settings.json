@@ -8,7 +8,8 @@
   "prettier.jsxBracketSameLine": false,
   "prettier.arrowParens": "always",
 
-  "java.format.enabled": true,
+  //"java.format.enabled": true,
+  //"java.errors.incompleteClasspath.severity": "ignore",
 
   "snippets.ultisnips.directories": ["/Users/jamieww/.config/coc/ultisnips"],
 
@@ -71,6 +72,5 @@
     //  /* "args": ["-c", "$HOME/.config/efm-langserver/config.yaml"], */
     //  "filetypes": ["vim", "eruby", "markdown"]
     // }
-  },
-  "java.errors.incompleteClasspath.severity": "ignore"
+  }
 }
