@@ -334,22 +334,22 @@ let g:autopep8_diff_type='vertical'
 let g:autopep8_disable_show_diff=1
 
 " YouCompleteMe options
-set completeopt=menu,menuone
-let g:ycm_add_preview_to_completeopt = 0
-let g:ycm_show_diagnostics_ui = 0
-let g:ycm_server_log_level = 'info'
-let g:ycm_min_num_identifier_candidate_chars = 2
-let g:ycm_min_num_of_chars_for_completion = 2
-let g:ycm_collect_identifiers_from_comments_and_strings = 1
-let g:ycm_complete_in_comments = 1
-let g:ycm_complete_in_strings = 1
-let g:ycm_seed_identifiers_with_syntax = 1
-let g:ycm_key_invoke_completion = '<c-y>'
-let g:ycm_goto_buffer_command = 'vertical-split'
-let g:ycm_semantic_triggers =  {
-            \ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
-            \ 'cs,lua,javascript': ['re!\w{2}'],
-            \ }
+" set completeopt=menu,menuone
+" let g:ycm_add_preview_to_completeopt = 0
+" let g:ycm_show_diagnostics_ui = 0
+" let g:ycm_server_log_level = 'info'
+" let g:ycm_min_num_identifier_candidate_chars = 2
+" let g:ycm_min_num_of_chars_for_completion = 2
+" let g:ycm_collect_identifiers_from_comments_and_strings = 1
+" let g:ycm_complete_in_comments = 1
+" let g:ycm_complete_in_strings = 1
+" let g:ycm_seed_identifiers_with_syntax = 1
+" let g:ycm_key_invoke_completion = '<c-y>'
+" let g:ycm_goto_buffer_command = 'vertical-split'
+" let g:ycm_semantic_triggers =  {
+"             \ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
+"             \ 'cs,lua,javascript': ['re!\w{2}'],
+"             \ }
 
 " vim-auto-save options
 let g:auto_save = 1
@@ -358,6 +358,25 @@ let g:auto_save_events = ['CursorHold']
 
 autocmd FileType python noremap <buffer> <Leader>ap :call Autopep8()<CR>
 autocmd VimLeave * mks! ~/.config/nvim/session.vim
+
+" lightline {{{
+function! CocCurrentFunction()
+    return get(b:, 'coc_current_function', '')
+endfunction
+
+let g:lightline = {
+      \ 'colorscheme': 'powerline',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head',
+      \   'cocstatus': 'coc#status',
+      \   'currentfunction': 'CocCurrentFunction'
+      \ },
+      \ }
+" }}}
 
 " w0rp/ale{{{
 "始终开启标志列
@@ -428,6 +447,6 @@ nnoremap <leader>/ :Ack!<Space>
 " }}}
 
 " json hidden {{{
-set conceallevel=0
+" set conceallevel=0
 " }}}
 
