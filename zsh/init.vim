@@ -19,9 +19,8 @@ endfunction
 " }}}
 
 " python {{{
-let g:python_host_prog="/Users/jamieww/.pyenv/versions/anaconda2-4.0.0/bin/python"
-" let g:python_host_prog="/Users/jamieww/.pyenv/versions/3.7.3/bin/python"
-let g:python3_host_prog="/Users/jamieww/.pyenv/versions/3.7.3/bin/python3"
+let g:python_host_prog="~/.pyenv/versions/anaconda2-4.0.0/bin/python"
+let g:python3_host_prog="~/.pyenv/versions/3.7.3/bin/python3"
 " let g:powerline_pycmd="py3"
 " }}}
 
