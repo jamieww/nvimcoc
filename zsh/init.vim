@@ -19,8 +19,9 @@ endfunction
 " }}}
 
 " python {{{
-let g:python_host_prog="~/.pyenv/versions/anaconda2-4.0.0/bin/python"
-let g:python3_host_prog="~/.pyenv/versions/3.7.3/bin/python3"
+let g:python_host_prog="/Users/jamieww/.pyenv/versions/anaconda2-4.0.0/bin/python"
+" let g:python_host_prog="/Users/jamieww/.pyenv/versions/3.7.3/bin/python"
+let g:python3_host_prog="/Users/jamieww/.pyenv/versions/3.7.3/bin/python3"
 " let g:powerline_pycmd="py3"
 " }}}
 
@@ -64,7 +65,7 @@ Plug 'simnalamburt/vim-mundo'
 Plug 'honza/vim-snippets'
 Plug 'yegappan/mru'
 Plug 'jistr/vim-nerdtree-tabs'
-Plug 'w0rp/ale'
+" Plug 'w0rp/ale'
 " Plug 'ervandew/supertab'
 if has('nvim')
     Plug 'itchyny/lightline.vim'
@@ -148,7 +149,16 @@ set splitright
 " 使用内置 tab 样式而不是 gui
 " set guioptions-=e
 set nolist
-set guifont=Inconsolata\ for\ Powerline:h18
+
+if has("gui_vimr")
+    set termguicolors
+elseif has('gui_running')
+    set termguicolors
+	set guifont=Inconsolata\ for\ Powerline:h18
+else
+    set t_Co=256
+	set guifont=Inconsolata\ for\ Powerline:h18
+endif
 
 " theme 
 set background=dark             " dark | light
@@ -161,11 +171,12 @@ colorscheme jellybeans
 " colorscheme molokai 
 " colorscheme solarized           " use solarized theme
 " let g:solarized_termcolors=256  " if you are use terminal
-if has('gui_running')
-    set termguicolors
-else
-    set t_Co=256
-endif
+
+" if has('gui_running')
+"     set termguicolors
+" else
+"     set t_Co=256
+" endif
 
 " let g:Powerline_symbols = 'fancy'
 let g:Powerline_symbols = 'unicode'
