@@ -212,11 +212,13 @@ nmap <leader>e :e ~/.config/nvim/init.vim<cr>
 inoremap jj <ESC> 
 nnoremap <leader>es :CocCommand snippets.editSnippets<CR>
 
-map <leader>tn :tabnew<cr>
+map tn :tabnew<cr>
 map <leader>tc :tabclose<cr>
-map <leader>th :tabp<cr>
-map <leader>tl :tabn<cr>
-map <Leader>tt :NERDTreeToggle<CR>
+map th :tabfirst<cr>
+map tk :tabp<cr>
+map tj :tabn<cr>
+map tl :tablast<cr>
+map tt :NERDTreeToggle<CR>
 map <Leader>ff :NERDTreeFind<CR>
 
 nmap <Leader>h :MRU<CR> 
@@ -362,9 +364,9 @@ let g:autopep8_disable_show_diff=1
 "             \ }
 
 " vim-auto-save options
-let g:auto_save = 1
-let g:updatetime = 5000
-let g:auto_save_events = ['CursorHold']
+" let g:auto_save = 1
+" let g:updatetime = 5000
+" let g:auto_save_events = ['CursorHold']
 
 autocmd FileType python noremap <buffer> <Leader>ap :call Autopep8()<CR>
 autocmd VimLeave * mks! ~/.config/nvim/session.vim
