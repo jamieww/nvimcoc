@@ -1,0 +1,43 @@
+{
+  "inbounds": [{
+    "port": 2000,
+    "listen": "127.0.0.1",
+    "protocol": "http",
+    "settings": {
+        "auth": "noauth",
+        "ip": "127.0.0.1"
+    }
+  }],
+  "outbounds": [{
+    "protocol" : "vmess",
+    "settings" : {
+        "vnext" : [
+          {
+            "address" : "23.83.226.242",
+            "users" : [
+              {
+                "id" : "dc62c29c-2481-41c3-bf85-05cbd3600eaa",
+                "alterId" : 64,
+                "security" : "auto",
+                "level" : 0
+              }
+            ],
+            "port" : 37224
+          }
+        ]
+    }
+  },{
+    "protocol": "blackhole",
+    "settings": {},
+    "tag": "blocked"
+  }],
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "ip": ["geoip:private"],
+        "outboundTag": "blocked"
+      }
+    ]
+  }
+}
