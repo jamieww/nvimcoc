@@ -196,7 +196,7 @@ nmap <leader>e :e ~/.config/nvim/init.vim<cr>
 "set shortcut for copy to clipboard of system 
 " nmap <leader>y "+y
 " nmap <leader>v "+gp
-inoremap jj <ESC> 
+inoremap kk <ESC> 
 nnoremap <leader>es :CocCommand snippets.editSnippets<CR>
 
 map tn :tabnew<cr>

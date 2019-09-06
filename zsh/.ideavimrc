@@ -1,0 +1,43 @@
+"  Basic Settings{{{
+set nu
+set hlsearch
+set incsearch
+set relativenumber
+
+" Vim 的默认寄存器和系统剪贴板共享
+set clipboard+=unnamed
+set history=100000
+" select模式下复制
+if has("clipboard")
+    vnoremap <C-C> "+y
+endif
+
+"}}}
+
+" Keymap {{{
+map <Space>h :tabp<cr>
+map <Space>l :tabn<cr>
+inoremap kk <ESC> 
+
+" split naviagation 
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+noremap <Space>/ :action Find<CR>
+
+" 映射到idea快捷键
+" 弹出输入框，可以跳到指定类
+nnoremap <Space>gc :action GotoClass<CR>
+" 弹出输入框，跳转到指定操作
+nnoremap <Space>ga :action GotoAction<CR>
+" 跳转到定义
+nnoremap <Space>gd :action GotoDeclaration<CR>
+" 跳转到实现
+nnoremap <Space>gi :action GotoImplementation<CR>
+" 跳转到指定的文件
+nnoremap <Space>gf :action GotoFile<CR>
+" 跳转到方法的声明
+nnoremap <Space>gs :action GotoSuperMethod<CR>
+"}}}
+
