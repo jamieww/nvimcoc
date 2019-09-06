@@ -8,7 +8,7 @@
   "prettier.jsxBracketSameLine": false,
   "prettier.arrowParens": "always",
 
-  "python.pythonPath": "/Users/jamieww/.pyenv/versions/anaconda2-4.0.0/bin",
+  //"python.pythonPath": "/Users/jamieww/.pyenv/versions/anaconda2-4.0.0/bin",
   //"python.jediEnabled": false,
 
   //"java.format.enabled": true,
