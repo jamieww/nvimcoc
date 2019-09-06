@@ -1,6 +1,6 @@
 " Install Vim Plug if not installed
 if empty(glob('$HOME/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+  silent !curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall
 endif
@@ -52,7 +52,6 @@ Plug 'yegappan/mru'
 Plug 'jistr/vim-nerdtree-tabs'
 " Plug 'w0rp/ale'
 Plug 'itchyny/lightline.vim'
-endif
 Plug 'Yggdroot/indentLine'
 Plug 'jiangmiao/auto-pairs'
 " Plug 'fatih/vim-go', { 'for': 'go' }
@@ -81,7 +80,7 @@ filetype plugin indent on    " required
 set undofile
 " check 'vim-mundo directory'
 call EnsureDirExits($HOME . '/.vim/tmp/undo')
-set undodir=~/.vim/tmp/undo
+set undodir=$HOME/.vim/tmp/undo
 nnoremap <leader>u :MundoToggle<cr>
 nnoremap <F5> :MundoToggle<cr>
 let g:mundo_debug = 1
@@ -131,15 +130,9 @@ set splitright
 " set guioptions-=e
 set nolist
 
-if has("gui_vimr")
-    set termguicolors
-elseif has('gui_running')
-    set termguicolors
-	set guifont=Inconsolata\ for\ Powerline:h18
-else
-    set t_Co=256
-	set guifont=Inconsolata\ for\ Powerline:h18
-endif
+set termguicolors
+" set t_Co=256
+set guifont=Inconsolata\ for\ Powerline:h18
 
 " theme 
 set background=dark             " dark | light
@@ -152,12 +145,6 @@ colorscheme jellybeans
 " colorscheme molokai 
 " colorscheme solarized           " use solarized theme
 " let g:solarized_termcolors=256  " if you are use terminal
-
-" if has('gui_running')
-"     set termguicolors
-" else
-"     set t_Co=256
-" endif
 
 " let g:Powerline_symbols = 'fancy'
 let g:Powerline_symbols = 'unicode'
@@ -184,9 +171,9 @@ set fileformats=unix,dos
 "}}}
 
 " Keymap {{{
-nmap <leader>s :source ~/.config/nvim/init.vim<cr>
-nmap <leader>ss :source ~/.config/nvim/session.vim<cr>
-nmap <leader>e :e ~/.config/nvim/init.vim<cr>
+nmap <leader>s :source $HOME/_vimrc<cr>
+nmap <leader>ss :source $HOME/.vim/session.vim<cr>
+nmap <leader>e :e $HOME/_vimrc<cr>
 "set shortcut for copy to clipboard of system 
 " nmap <leader>y "+y
 " nmap <leader>v "+gp
@@ -195,14 +182,14 @@ nnoremap <leader>es :CocCommand snippets.editSnippets<CR>
 
 map tn :tabnew<cr>
 map <leader>tc :tabclose<cr>
-map th :tabfirst<cr>
-map tk :tabp<cr>
-map tj :tabn<cr>
-map tl :tablast<cr>
+map <leader>h :tabfirst<cr>
+map <leader>k :tabp<cr>
+map <leader>j :tabn<cr>
+map <leader>l :tablast<cr>
 map tt :NERDTreeToggle<CR>
 map <Leader>ff :NERDTreeFind<CR>
 
-nmap <Leader>h :MRU<CR> 
+nmap gh :MRU<CR> 
 nnoremap <silent> <Leader>f :NERDTreeFind<CR>
 " nnoremap <Leader>gc :Gcommit -a -v<CR> 
 nnoremap <Leader>gc :Gcommit -a<CR> 
@@ -350,7 +337,7 @@ let g:autopep8_disable_show_diff=1
 " let g:auto_save_events = ['CursorHold']
 
 autocmd FileType python noremap <buffer> <Leader>ap :call Autopep8()<CR>
-autocmd VimLeave * mks! ~/.config/nvim/session.vim
+autocmd VimLeave * mks! $HOME/.vim/session.vim
 
 " lightline {{{
 function! CocCurrentFunction()
