@@ -17,7 +17,8 @@ endif
 " Keymap {{{
 map <Space>h :tabp<cr>
 map <Space>l :tabn<cr>
-inoremap kk <ESC> 
+" inoremap kk <ESC> 
+map kk <ESC> 
 
 " split naviagation 
 nnoremap <C-J> <C-W><C-J>
@@ -25,6 +26,8 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 noremap <Space>/ :action Find<CR>
+noremap cc :action CommentByLineComment<CR>
+noremap cs :action CommentByBlockComment<CR>
 
 " 映射到idea快捷键
 " 弹出输入框，可以跳到指定类
