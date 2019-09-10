@@ -15,10 +15,10 @@ endif
 "}}}
 
 " Keymap {{{
-map <Space>h :tabp<cr>
-map <Space>l :tabn<cr>
-" inoremap kk <ESC> 
-map kk <ESC> 
+map <Space>k :tabp<cr>
+map <Space>j :tabn<cr>
+inoremap kk <ESC> 
+vnoremap kk <ESC> 
 
 " split naviagation 
 nnoremap <C-J> <C-W><C-J>
@@ -29,11 +29,15 @@ noremap <Space>/ :action Find<CR>
 noremap cc :action CommentByLineComment<CR>
 noremap cs :action CommentByBlockComment<CR>
 
+nnoremap <Space>gc :action Vcs.CommitExecutor.Actions<CR>
+" nnoremap <Space>gc :action Vcs.CheckCommitMessageSpelling<CR> 
+nnoremap <Space>gp :action Vcs.Push<CR> 
+
 " 映射到idea快捷键
 " 弹出输入框，可以跳到指定类
-nnoremap <Space>gc :action GotoClass<CR>
+" nnoremap <Space>gc :action GotoClass<CR>
 " 弹出输入框，跳转到指定操作
-nnoremap <Space>ga :action GotoAction<CR>
+" nnoremap <Space>ga :action GotoAction<CR>
 " 跳转到定义
 nnoremap <Space>gd :action GotoDeclaration<CR>
 " 跳转到实现

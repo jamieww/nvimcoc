@@ -197,6 +197,7 @@ nmap <leader>e :e ~/.config/nvim/init.vim<cr>
 " nmap <leader>y "+y
 " nmap <leader>v "+gp
 inoremap kk <ESC> 
+vnoremap kk <ESC> 
 nnoremap <leader>es :CocCommand snippets.editSnippets<CR>
 
 map tn :tabnew<cr>
@@ -217,6 +218,10 @@ nnoremap <Leader>gpl :Gpull<CR>
 nnoremap <Leader>gp :Gpush<CR> 
 nnoremap <Leader>ga :!git add .<CR> 
 
+nnoremap <silent> <space>g :<C-u>CocList --normal<CR>
+" nnoremap <silent> <space>m :<C-u>CocList --normal mru<cr>
+" nnoremap <silent> <space>y :<C-u>CocList -A --normal yank<cr>
+
 " w0rp/ale
 "普通模式下，sp前往上一个错误或警告，sn前往下一个错误或警告
 " nmap ak <Plug>(ale_previous_wrap)
@@ -230,14 +235,20 @@ nnoremap <Leader>ga :!git add .<CR>
 
 " nerd commenter
 let g:NERDSpaceDelims=1
+let g:NERDCompactSexyComs = 1
 let g:NERDDefaultAlign = 'left'
-let g:NERDCustomDelimiters = { 'python': { 'left': '#','leftAlt': '"""','rightAlt': '"""' } }
+" let g:NERDCustomDelimiters = { 'python': { 'left': '#','leftAlt': '"""','rightAlt': '"""' } }
+let g:NERDCustomDelimiters = { 
+    \ 'python': {'left': '#', 'leftAlt': '"""', 'rightAlt': '"""'},
+    \ 'html': {'left': '<!--', 'right': '-->', 'leftAlt': '/*', 'rightAlt': '*/'}
+    \ }
 map cc          <plug>NERDCommenterComment<CR>
 map cu          <plug>NERDCommenterUncomment<CR>
 map cm          <plug>NERDCommenterMinimal<CR>
 map cs          <plug>NERDCommenterSexy<CR>
 map ci          <plug>NERDCommenterInvert<CR>
 map cy          <plug>NERDCommenterYank<CR>
+map ca          <plug>NERDCommenterAltDelims<CR>
 map ce          <plug>NERDCommenterToEOL<CR>
 map c<space>    <plug>NERDCommenterToggle<CR>
 
