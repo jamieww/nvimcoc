@@ -1,0 +1,46 @@
+{
+    "vim.useSystemClipboard": true,
+    "editor.fontSize": 15,
+    "vim.hlsearch": true,
+    "vim.incsearch": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before":["j","j"],
+            "after":["<Esc>"]
+        }
+    ],
+    "vim.leader": "<space>",
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before":["leader","j"],
+            "commands":[
+                ":tabn"
+            ]
+        },
+        {
+            "before":["leader","k"],
+            "commands":[
+                ":tabp"
+            ]
+        },
+        {
+            "before":["leader","h"],
+            "commands":[
+                ":tabfirst"
+            ]
+        },
+        {
+            "before":["leader","l"],
+            "commands":[
+                ":tablast"
+            ]
+        }
+    ],
+    "editor.lineNumbers": "relative",
+    "markdown-preview-enhanced.enableExtendedTableSyntax": true,
+    "markdown-preview-enhanced.previewTheme": "vue.css",
+    "go.formatTool": "goimports",
+    "editor.minimap.enabled": true,
+    "breadcrumbs.enabled": true,
+    "workbench.activityBar.visible": false
+}
