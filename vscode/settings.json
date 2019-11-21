@@ -1,6 +1,6 @@
 {
     "vim.useSystemClipboard": true,
-    "editor.fontSize": 15,
+    "editor.fontSize": 18,
     "vim.hlsearch": true,
     "vim.incsearch": true,
     "vim.insertModeKeyBindings": [
@@ -11,6 +11,18 @@
     ],
     "vim.leader": "<space>",
     "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before":["c"],
+            "after":[
+                "g","c"
+            ]
+        },
+        {
+            "before":["C"],
+            "after":[
+                "g","C"
+            ]
+        },
         {
             "before":["leader","j"],
             "commands":[
@@ -40,7 +52,11 @@
     "markdown-preview-enhanced.enableExtendedTableSyntax": true,
     "markdown-preview-enhanced.previewTheme": "vue.css",
     "go.formatTool": "goimports",
-    "editor.minimap.enabled": true,
+    "editor.minimap.enabled": false,
     "breadcrumbs.enabled": true,
-    "workbench.activityBar.visible": false
+    "workbench.activityBar.visible": true,
+    "go.useLanguageServer": true,
+    "editor.fontFamily": "Inconsolata for Powerline",
+    "editor.wordWrapColumn": 100,
+    "editor.lineHeight": 20
 }
