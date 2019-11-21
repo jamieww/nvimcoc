@@ -1,0 +1,27 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "gin-ftms",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "remotePath": "",
+            "port": 2345,
+            "host": "127.0.0.1",
+            "env": {},
+            "cwd": "${workspaceRoot}",
+            "program": "${workspaceRoot}/cmd/server/main.go",
+            "args": [
+                "-c", "./configs/config.toml", 
+                "-m", "./configs/model.conf",
+                "-swagger", "./internal/app/swagger"
+            ],
+            //"backend": "native",
+            "showLog": true
+        }
+    ]
+}
