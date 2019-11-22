@@ -3,13 +3,20 @@
     "editor.fontSize": 18,
     "vim.hlsearch": true,
     "vim.incsearch": true,
+    "vim.leader": "<space>",
+    "vim.statusBarColorControl": true,
+    "vim.statusBarColors.normal": ["#303030", "#939393"],
+    "vim.statusBarColors.insert": ["#BF616A", "#7C160D"],
+    "vim.statusBarColors.visual": ["#265E84", "#98DAF8"],
+    "vim.statusBarColors.visualline": "#B48EAD",
+    "vim.statusBarColors.visualblock": "#A3BE8C",
+    "vim.statusBarColors.replace": "#D08770",
     "vim.insertModeKeyBindings": [
         {
             "before":["j","j"],
             "after":["<Esc>"]
         }
     ],
-    "vim.leader": "<space>",
     "vim.normalModeKeyBindingsNonRecursive": [
         {
             "before":["c"],
@@ -21,6 +28,30 @@
             "before":["C"],
             "after":[
                 "g","C"
+            ]
+        },
+        {
+            "before":["leader","g","c"],
+            "commands":[
+                "git.commitAll"
+            ]
+        },
+        {
+            "before":["leader","g","p"],
+            "commands":[
+                "git.push"
+            ]
+        },
+        {
+            "before":["leader","g","l"],
+            "commands":[
+                "git.pull"
+            ]
+        },
+        {
+            "before":["leader","g","h"],
+            "commands":[
+                "workbench.action.quickOpen"
             ]
         },
         {
@@ -53,10 +84,20 @@
     "markdown-preview-enhanced.previewTheme": "vue.css",
     "go.formatTool": "goimports",
     "editor.minimap.enabled": false,
-    "breadcrumbs.enabled": true,
+    "breadcrumbs.enabled": false,
     "workbench.activityBar.visible": true,
     "go.useLanguageServer": true,
     "editor.fontFamily": "Inconsolata for Powerline",
-    "editor.wordWrapColumn": 100,
-    "editor.lineHeight": 20
+    "editor.wordWrapColumn": 120,
+    "editor.lineHeight": 20,
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#303030",
+        "statusBar.noFolderBackground": "#303030",
+        "statusBar.debuggingBackground": "#303030",
+        "statusBar.foreground": "#939393"
+    },
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Material Theme Darker High Contrast",
+    "sync.gist": "9d660dcf26e470f411639727bdd30cef",
+    "git.autofetch": true
 }
