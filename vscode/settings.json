@@ -6,18 +6,53 @@
     "vim.leader": "<space>",
     "vim.statusBarColorControl": true,
     "vim.statusBarColors.normal": ["#303030", "#939393"],
-    "vim.statusBarColors.insert": ["#BF616A", "#7C160D"],
+    // "vim.statusBarColors.insert": ["#BF616A", "#7C160D"],
+    "vim.statusBarColors.insert": ["#BF616A", "#E8E8D5"],
     "vim.statusBarColors.visual": ["#265E84", "#98DAF8"],
     "vim.statusBarColors.visualline": "#B48EAD",
     "vim.statusBarColors.visualblock": "#A3BE8C",
     "vim.statusBarColors.replace": "#D08770",
+    "vim.statusBarColors.commandlineinprogress": ["#5C6445", "#E8E8D5"],
+    "vim.statusBarColors.searchinprogressmode": ["#5C6445", "#E8E8D5"],
+    "vim.autoSwitchInputMethod.enable": true,
+    "vim.autoSwitchInputMethod.defaultIM": "com.apple.keylayout.ABC",
+    "vim.autoSwitchInputMethod.obtainIMCmd": "/usr/local/bin/im-select",
+    "vim.autoSwitchInputMethod.switchIMCmd": "/usr/local/bin/im-select {im}",
     "vim.insertModeKeyBindings": [
         {
             "before":["j","j"],
             "after":["<Esc>"]
         }
     ],
+    "vim.visualModeKeyBindings": [
+        {
+            "before":["leader","g","r"],
+            "commands":[
+                "vscode-postgres.runQuery"
+            ]
+        }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [">"],
+            "commands": [
+                "editor.action.indentLines"
+            ]
+        },
+        {
+            "before": ["<"],
+            "commands": [
+                "editor.action.outdentLines"
+            ]
+        }
+    ],
     "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["leader",":"],
+            "commands": [
+                "workbench.action.showCommands",
+            ]
+        },
         {
             "before":["c"],
             "after":[
@@ -49,9 +84,81 @@
             ]
         },
         {
+            "before":["leader","g","r"],
+            "commands":[
+                "vscode-postgres.runQuery"
+            ]
+        },
+        {
+            "before":["leader","g","s"],
+            "commands":[
+                "vscode-postgres.selectConnection"
+            ]
+        },
+        {
             "before":["leader","g","h"],
             "commands":[
                 "workbench.action.quickOpen"
+            ]
+        },
+        {
+            "before":["leader","g","d"],
+            "commands":[
+                "editor.action.peekDefinition"
+            ]
+        },
+        {
+            "before":["leader","m","m"],
+            "commands":[
+                "bookmarks.toggle"
+            ]
+        },
+        {
+            "before":["leader","m","t"],
+            "commands":[
+                "bookmarks.toggleLabeled"
+            ]
+        },
+        {
+            "before":["m","m"],
+            "commands":[
+                "bookmarks.jumpToNext"
+            ]
+        },
+        {
+            "before":["m","k"],
+            "commands":[
+                "bookmarks.jumpToPrevious"
+            ]
+        },
+        {
+            "before":["m","l"],
+            "commands":[
+                "bookmarks.list"
+            ]
+        },
+        {
+            "before":["leader","m","a"],
+            "commands":[
+                "bookmarks.listFromAllFiles"
+            ]
+        },
+        {
+            "before":["leader","m","s"],
+            "commands":[
+                "workbench.view.extension.bookmarks"
+            ]
+        },
+        {
+            "before":["leader","m","c"],
+            "commands":[
+                "bookmarks.clear"
+            ]
+        },
+        {
+            "before":["leader","m","c","c"],
+            "commands":[
+                "bookmarks.clearFromAllFiles"
             ]
         },
         {
@@ -84,11 +191,11 @@
     "markdown-preview-enhanced.previewTheme": "vue.css",
     "go.formatTool": "goimports",
     "editor.minimap.enabled": false,
-    "breadcrumbs.enabled": false,
-    "workbench.activityBar.visible": true,
+    "breadcrumbs.enabled": true,
+    "workbench.activityBar.visible": false,
     "go.useLanguageServer": true,
     "editor.fontFamily": "Inconsolata for Powerline",
-    "editor.wordWrapColumn": 120,
+    "editor.wordWrapColumn": 160,
     "editor.lineHeight": 20,
     "workbench.colorCustomizations": {
         "statusBar.background": "#303030",
@@ -99,5 +206,10 @@
     "workbench.iconTheme": "material-icon-theme",
     "workbench.colorTheme": "Material Theme Darker High Contrast",
     "sync.gist": "9d660dcf26e470f411639727bdd30cef",
-    "git.autofetch": true
+    "git.autofetch": true,
+    "editor.wordWrap": "on",
+    "vscode-postgres.defaultConnection": "postgresql",
+    "diffEditor.renderSideBySide": true,
+    "bookmarks.saveBookmarksInProject": true,
+    "vim.highlightedyank.enable": true
 }
