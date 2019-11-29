@@ -211,5 +211,13 @@
     "vscode-postgres.defaultConnection": "postgresql",
     "diffEditor.renderSideBySide": true,
     "bookmarks.saveBookmarksInProject": true,
-    "vim.highlightedyank.enable": true
+    "vim.highlightedyank.enable": true,
+    "vim.easymotion": true,
+    "vim.easymotionMarkerFontFamily": "Inconsolata for Powerline",
+    "vim.easymotionMarkerFontSize": "16",
+    "vim.easymotionMarkerHeight": 18,
+    "vim.easymotionMarkerWidthPerChar": 10,
+    "vim.easymotionMarkerBackgroundColor": "#833C0C",
+    "vim.easymotionMarkerForegroundColorOneChar": "#9EC285",
+    "vim.easymotionMarkerForegroundColorTwoChar": "#859ECC"
 }
