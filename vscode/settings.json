@@ -20,11 +20,15 @@
     "vim.autoSwitchInputMethod.switchIMCmd": "/usr/local/bin/im-select {im}",
     "vim.insertModeKeyBindings": [
         {
-            "before":["j","j"],
+            "before":["j","k"],
             "after":["<Esc>"]
         }
     ],
     "vim.visualModeKeyBindings": [
+        {
+            "before":["`"],
+            "after":["<Esc>"]
+        },
         {
             "before":["leader","g","r"],
             "commands":[
@@ -84,6 +88,12 @@
             ]
         },
         {
+            "before":["leader","r"],
+            "commands":[
+                "workbench.action.debug.start"
+            ]
+        },
+        {
             "before":["leader","g","r"],
             "commands":[
                 "vscode-postgres.runQuery"
@@ -105,6 +115,12 @@
             "before":["leader","g","d"],
             "commands":[
                 "editor.action.peekDefinition"
+            ]
+        },
+        {
+            "before":["leader","g","i"],
+            "commands":[
+                "editor.action.goToImplementation"
             ]
         },
         {
@@ -191,9 +207,24 @@
     "markdown-preview-enhanced.previewTheme": "vue.css",
     "go.formatTool": "goimports",
     "editor.minimap.enabled": false,
-    "breadcrumbs.enabled": true,
+    "breadcrumbs.enabled": false,
     "workbench.activityBar.visible": false,
     "go.useLanguageServer": true,
+    "go.languageServerExperimentalFeatures": {
+        "format": true,
+        "autoComplete": true,
+        "rename": true,
+        "goToDefinition": true,
+        "hover": true,
+        "signatureHelp": true,
+        "goToTypeDefinition": true,
+        "goToImplementation": true,
+        "documentSymbols": true,
+        "workspaceSymbols": true,
+        "findReferences": true,
+        "diagnostics": true,
+        "documentLink": true
+    },
     "editor.fontFamily": "Inconsolata for Powerline",
     "editor.wordWrapColumn": 160,
     "editor.lineHeight": 20,
@@ -214,10 +245,11 @@
     "vim.highlightedyank.enable": true,
     "vim.easymotion": true,
     "vim.easymotionMarkerFontFamily": "Inconsolata for Powerline",
-    "vim.easymotionMarkerFontSize": "16",
+    "vim.easymotionMarkerFontSize": "18",
     "vim.easymotionMarkerHeight": 18,
     "vim.easymotionMarkerWidthPerChar": 10,
-    "vim.easymotionMarkerBackgroundColor": "#833C0C",
+    "vim.easymotionMarkerBackgroundColor": "#804002",
     "vim.easymotionMarkerForegroundColorOneChar": "#9EC285",
-    "vim.easymotionMarkerForegroundColorTwoChar": "#859ECC"
+    "vim.easymotionMarkerForegroundColorTwoChar": "#42A5F5",
+    "workbench.settings.editor": "json"
 }
