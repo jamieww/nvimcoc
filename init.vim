@@ -65,6 +65,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'fatih/vim-go', { 'for': 'go' }
 " Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'tell-k/vim-autopep8'
+Plug 'dart-lang/dart-vim-plugin'
 Plug 'gabrielelana/vim-markdown'
 Plug 'joker1007/vim-markdown-quote-syntax'
 " Plug 'iamcco/mathjax-support-for-mkdp'
