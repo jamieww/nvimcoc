@@ -146,6 +146,10 @@ brew upgrade dart
 
 install dart_language_server
 
+On option is use coc-flutter
+
+`:CocInstall coc-flutter`
+
 ```bash
 pub global activate dart_language_server
 
